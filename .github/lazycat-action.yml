@@ -1,0 +1,41 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: dist/pansou.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: pansou
+    bump: patch
+
+build:
+  run_buildscript: false
+
+images:
+  # 上游 GHCR 无版本 tag（latest 可变），digest 比对 + patch 自增
+  - id: pansou
+    target: service
+    service: pansou
+    source: ghcr.io/fish2018/pansou-web
+    channel: custom
+    sort: created
+    tag_regex: '^latest$'
+    delivery:
+      mode: mirror
+      require_digest_match: true
+
+stores:
+  official:
+    enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: PanSou
+    summary: "网盘资源搜索：TG 频道 + 插件聚合"

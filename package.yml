@@ -1,0 +1,15 @@
+package: community.lazycat.app.pansou
+version: 2.0.0
+name: PanSou
+description: "High-performance netdisk resource search API service with TG channel and plugin search"
+min_os_version: 1.5.0
+author: fish2018
+license: MIT
+homepage: https://github.com/fish2018/pansou
+locales:
+  zh:
+    name: "PanSou 网盘搜索"
+    description: "高性能网盘资源搜索：TG 频道 + 70+ 插件并发搜索、结果智能排序、网盘类型分类，前后端一体开箱即用"
+  en:
+    name: "PanSou"
+    description: "High-performance netdisk resource search with TG channels and plugins"
