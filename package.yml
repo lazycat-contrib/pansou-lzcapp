@@ -1,5 +1,5 @@
 package: community.lazycat.app.pansou
-version: 2.0.1
+version: 2.0.0
 name: PanSou
 description: "High-performance netdisk resource search API service with TG channel and plugin search"
 min_os_version: 1.5.0
